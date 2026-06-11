@@ -77,7 +77,7 @@ def chat():
         }), 500
 
 
-if __name__ == "__main__":
-    print("Servidor iniciado com sucesso, porta: 5000. Para testar use: http://localhost:5000")
-    app.run(debug=True, port=5000)
-    
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    print("Servidor iniciado com sucesso na porta",port)
+    app.run(host='0.0.0.0', port=port)
